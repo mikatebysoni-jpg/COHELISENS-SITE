@@ -325,7 +325,8 @@
                 <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
                 <textarea name="message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
                 <input type="hidden" name="_subject" value="Nouveau contact Cohelisens">
-                <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0 0 0;">Envoyer ma demande</button>
+                <button id="my-form-button" type="submit" class="btn-or" style="width: 100%; margin: 10px 0 0 0;">Envoyer ma demande</button>
+<p id="my-form-status" style="margin-top:20px; display:none; color: var(--or-cohelisens); font-weight: 700; text-align: center; padding: 15px; border: 1px solid var(--or-cohelisens); border-radius: 5px;"></p>
             </form>
        <div style="text-align: center; margin-top: 25px;">
     <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 15px; color: #fff;">Pour aller plus loin :</p>
@@ -341,5 +342,40 @@
             <p style="opacity:0.6; margin-top: 15px;">TVA non applicable, art. 293 B du CGI</p>
         </div>
     </footer>
+    <script>
+  var form = document.querySelector(".contact-form");
+  var button = document.getElementById("my-form-button");
+  var status = document.getElementById("my-form-status");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    button.disabled = true;
+    button.innerHTML = "Envoi en cours...";
+    
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "✨ Merci ! Votre message a bien été envoyé. Je reviens vers vous sous 48h.";
+        status.style.display = "block";
+        form.style.display = "none"; 
+      } else {
+        status.innerHTML = "Oups ! Il y a eu un problème. Merci de réessayer.";
+        status.style.display = "block";
+        button.disabled = false;
+        button.innerHTML = "Envoyer ma demande";
+      }
+    }).catch(error => {
+      status.innerHTML = "Erreur de connexion. Vérifiez votre réseau.";
+      status.style.display = "block";
+      button.disabled = false;
+      button.innerHTML = "Envoyer ma demande";
+    });
+  }
+  form.addEventListener("submit", handleSubmit);
+</script>
 </body>
 </html>
