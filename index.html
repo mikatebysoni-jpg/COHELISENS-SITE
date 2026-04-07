@@ -32,26 +32,50 @@
         p { line-height: 1.6; margin-bottom: 20px; font-weight: 300; }
 
         /* --- HERO & LOGO --- */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(rgba(26, 58, 92, 0.85), rgba(26, 58, 92, 0.95)), 
-                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 100px 20px 60px 20px;
-            position: relative;
+       .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Aligne le texte vers le haut */
+            align-items: center; /* Centre le texte horizontalement */
+            padding-top: 120px; /* Laisse de la place pour le logo au-dessus */
+            background-color: var(--bleu-petrole-profond);
+            min-height: 350px;
+            text-align: center;
+            position: relative; /* Indispensable pour que le logo reste fixé */
         }
-        
+
         .logo { 
             position: absolute; 
-            top: 30px; 
-            left: 50px; 
-            width: 180px; 
+            top: 20px; 
+            left: 20px; 
+            width: 140px; /* Un peu plus petit pour mieux passer sur mobile */
             height: auto;
             z-index: 10; 
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; font-weight: 700; }
+        .hero h1 { 
+            font-size: clamp(2rem, 8vw, 3.8rem); /* S'adapte tout seul à la taille de l'écran */
+            color: var(--or-cohelisens);
+            margin-bottom: 5px; 
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+        }
+
+        .subtitle { 
+            font-size: clamp(1rem, 4vw, 1.6rem); /* S'adapte tout seul à la taille de l'écran */
+            color: #ffffff; /* BLANC */
+            margin-top: 0;
+            letter-spacing: 2px;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        /* Ajustement spécial pour les petits téléphones */
+        @media (max-width: 600px) {
+            .hero { padding-top: 150px; } /* Descend un peu le texte pour ne pas chevaucher le logo */
+            .logo { left: 50%; transform: translateX(-50%); width: 120px; } /* Centre le logo sur mobile */
+        }
 
         /* --- BOUTONS --- */
         .btn-or { background: var(--or-cohelisens); color: var(--bleu-petrole-profond); padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; display: inline-block; margin: 10px; font-size: 1rem; transition: transform 0.2s; }
