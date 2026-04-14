@@ -35,27 +35,27 @@
        .hero {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Aligne le texte vers le haut */
-            align-items: center; /* Centre le texte horizontalement */
-            padding-top: 120px; /* Laisse de la place pour le logo au-dessus */
+            justify-content: flex-start; 
+            align-items: center; 
+            padding-top: 120px; 
             background-color: var(--bleu-petrole-profond);
             min-height: 350px;
             text-align: center;
-            position: relative; /* Indispensable pour que le logo reste fixé */
+            position: relative; 
         }
 
         .logo { 
             position: absolute; 
             top: 20px; 
             left: 20px; 
-            width: 140px; /* Un peu plus petit pour mieux passer sur mobile */
+            width: 140px; 
             height: auto;
             z-index: 10; 
         }
 
         .hero h1 { 
-            font-size: clamp(2rem, 8vw, 3.8rem); /* S'adapte tout seul à la taille de l'écran */
-           color: #ffffff; /* BLANC */
+            font-size: clamp(2rem, 8vw, 3.8rem); 
+           color: #ffffff; 
             margin-bottom: 5px; 
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -63,18 +63,17 @@
         }
 
         .subtitle { 
-            font-size: clamp(1rem, 4vw, 1.6rem); /* S'adapte tout seul à la taille de l'écran */
-            color: #ffffff; /* BLANC */
+            font-size: clamp(1rem, 4vw, 1.6rem); 
+            color: #ffffff; 
             margin-top: 0;
             letter-spacing: 2px;
             font-weight: 300;
             font-style: normal;
         }
 
-        /* Ajustement spécial pour les petits téléphones */
         @media (max-width: 600px) {
-            .hero { padding-top: 150px; } /* Descend un peu le texte pour ne pas chevaucher le logo */
-            .logo { left: 50%; transform: translateX(-50%); width: 120px; } /* Centre le logo sur mobile */
+            .hero { padding-top: 150px; } 
+            .logo { left: 50%; transform: translateX(-50%); width: 120px; } 
         }
 
         /* --- BOUTONS --- */
@@ -107,7 +106,7 @@
 
         /* --- OFFRES --- */
         .grid-offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 40px 0; }
-        .offre-card { background: var(--bleu-petrole-pro); color: var(--blanc-pur); border: 1px solid rgba(232, 168, 48, 0.3); padding: 35px 25px; border-radius: 15px; text-align: left; transition: transform 0.3s; position: relative; }
+        .offre-card { background: var(--bleu-petrole-pro); color: var(--blanc-pur); border: 1px solid rgba(232, 168, 48, 0.3); padding: 35px 25px; border-radius: 15px; text-align: left; transition: transform 0.3s; position: relative; display: flex; flex-direction: column; }
         .offre-card:hover { transform: translateY(-5px); }
         .offre-card i.main-icon { font-size: 2.5rem; color: var(--or-cohelisens); display: block; text-align: center; margin-bottom: 15px; }
         .offre-card h3 { text-align: center; border-bottom: 1px solid rgba(232, 168, 48, 0.2); padding-bottom: 15px; margin-bottom: 15px; }
@@ -123,11 +122,10 @@
             font-weight: 700;
         }
 
-        .offre-card ul { list-style: none; padding: 0; font-size: 1rem; }
+        .offre-card ul { list-style: none; padding: 0; font-size: 1rem; flex-grow: 1; }
         .offre-card li { margin-bottom: 12px; display: flex; align-items: flex-start; }
         .offre-card li i { color: var(--or-cohelisens); margin-right: 12px; margin-top: 5px; }
         
-        .price-tag { font-weight: 700; color: var(--or-cohelisens); border-top: 1px solid rgba(232, 168, 48, 0.2); padding-top: 20px; margin-top: 20px; text-align: center; font-size: 1.3rem; }
         .footer-notes { font-size: 0.9rem; max-width: 800px; margin: 20px auto 0 auto; line-height: 1.5; }
 
         /* --- FORMULAIRE --- */
@@ -136,7 +134,6 @@
 
         footer { padding: 40px 0; background: #0c1d30; font-size: 0.75rem; }
 
-        /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 768px) {
             body { font-size: 15px; }
             .hero { padding: 40px 20px; min-height: auto; }
@@ -252,7 +249,6 @@
                         <li><i class="fas fa-check"></i> Plan d'action concret</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
-                    <div class="price-tag">À partir de 1 200 € HT *</div>
                 </div>
 
                 <div class="offre-card">
@@ -265,7 +261,6 @@
                         <li><i class="fas fa-check"></i> Outils de médiation</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
-                    <div class="price-tag">À partir de 700 € HT *</div>
                 </div>
 
                 <div class="offre-card">
@@ -277,13 +272,13 @@
                         <li><i class="fas fa-check"></i> Posture et gestion de conflit</li>
                         <li><i class="fas fa-check"></i> Coaching de déblocage</li>
                     </ul>
-                    <div class="price-tag">À partir de 350 € HT * par personne</div>
                 </div>
             </div>
             
             <div class="footer-notes">
-                <p style="color: var(--or-cohelisens); font-weight: 700;">* Tarifs hors frais de déplacement.</p>
-                <p style="font-size: 0.9rem; border: 1px dashed var(--or-cohelisens); padding: 20px; border-radius: 10px;">Note : chaque devis est établi sur-mesure selon vos besoins, recensés par un questionnaire personnalisé envoyé au préalable.</p>
+                <p style="font-size: 1.1rem; border: 1px dashed var(--or-cohelisens); padding: 25px; border-radius: 10px; background-color: rgba(232, 168, 48, 0.05);">
+                    <strong>Note :</strong> Chaque proposition est établie sur-mesure selon vos besoins, recensés par un questionnaire personnalisé envoyé au préalable.
+                </p>
             </div>
         </div>
     </section>
@@ -316,7 +311,7 @@
         <div class="container">
             <h2>Parlons de vos besoins</h2>
             <p style="color: var(--or-cohelisens); font-weight: 700; font-size: 1.2rem;">Un échange de 20 minutes offert</p>
-            <p style="opacity: 0.9;">Faisons le point ensemble.</p>
+            <p style="opacity: 0.9;">Faisons le point ensemble pour une proposition adaptée.</p>
             
            <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
     <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
