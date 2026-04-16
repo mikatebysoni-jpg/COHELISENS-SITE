@@ -62,15 +62,6 @@
             font-weight: 700;
         }
 
-        .subtitle { 
-            font-size: clamp(1rem, 4vw, 1.6rem); 
-            color: #ffffff; 
-            margin-top: 0;
-            letter-spacing: 2px;
-            font-weight: 300;
-            font-style: normal;
-        }
-
         @media (max-width: 600px) {
             .hero { padding-top: 150px; } 
             .logo { left: 50%; transform: translateX(-50%); width: 120px; } 
@@ -163,7 +154,7 @@
         <img src="image_a0038e.png" alt="Logo COHÉLISENS" class="logo">
         <div class="container">
             <h1 style="color: #ffffff; margin-bottom: 20px;">COHÉLISENS</h1>
-            <p class="subtitle" style="color: #ffffff; margin-bottom: 40px;">Cohésion, Liens, Sens</p>
+            <p class="subtitle" style="color: #ffffff; margin-bottom: 40px; font-style: normal; letter-spacing: 2px;">Cohésion, Liens, Sens</p>
 
             <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.2); width: 100px; margin: 20px auto;">
 
@@ -175,10 +166,6 @@
 
             <p style="font-size: 1.2rem; max-width: 850px; margin: 0 auto 20px auto; font-weight: 400; color: #ffffff;">
                 Forte de 20 ans d'expérience terrain, je vous accompagne afin de transformer les tensions en impact positif sur la cohésion d'équipe, sans jargon ni catalogue.
-            </p>
-            
-            <p style="font-size: 1.1rem; font-weight: 300; opacity: 0.9; color: #ffffff;">
-                Aujourd'hui, je mets cette expertise à votre disposition ainsi qu'à celle de vos équipes, tous métiers et secteurs confondus.
             </p>
 
             <div style="margin-top: 30px;">
@@ -215,34 +202,6 @@
         </div>
     </section>
 
-    <section class="bg-white">
-        <div class="container">
-            <h2>Résultats attendus</h2>
-            <div class="grid-cards">
-                <div class="card">
-                    <i class="fas fa-compress-alt"></i>
-                    <h3>Réduction des tensions</h3>
-                    <p>Réduction immédiate des situations de blocage et des tensions internes.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-comments"></i>
-                    <h3>Meilleur climat d'équipe</h3>
-                    <p>Instaurer une communication transparente, honnête et constructive.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-water"></i>
-                    <h3>Bien-être au travail</h3>
-                    <p>Des relations fluides, saines et pérennes qui limitent le turn-over.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Performance et cohésion</h3>
-                    <p>Une équipe soudée qui mobilise son énergie vers les objectifs communs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="offre" class="bg-dark">
         <div class="container">
             <h2>Ce que je propose</h2>
@@ -251,13 +210,13 @@
             <div class="grid-offers">
                 <div class="offre-card">
                     <i class="fas fa-calendar-alt main-icon"></i>
-                    <h3>Formation A.C.R.C.</h3>
+                    <h3>Atelier Terrain A.C.R.C.</h3>
                     <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel</span>
                     <span class="duration-info">Format : Journée complète</span>
                     <ul>
-                        <li><i class="fas fa-check"></i> Méthode ACRC intégrale</li>
-                        <li><i class="fas fa-check"></i> Diagnostic complet</li>
-                        <li><i class="fas fa-check"></i> Plan d'action concret</li>
+                        <li><i class="fas fa-check"></i> Transmission de la méthode intégrale</li>
+                        <li><i class="fas fa-check"></i> Cas pratiques issus de votre quotidien</li>
+                        <li><i class="fas fa-check"></i> Plan d'action collectif immédiat</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
                 </div>
@@ -266,10 +225,10 @@
                     <i class="fas fa-bolt main-icon"></i>
                     <h3>Session Renfort</h3>
                     <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel ou Visio</span>
-                    <span class="duration-info">Journée complète ou demi-journée <br>(selon vos besoins collectifs)</span>
+                    <span class="duration-info">Journée complète ou demi-journée <br>(selon l'intensité du besoin)</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Focus problématique spécifique</li>
-                        <li><i class="fas fa-check"></i> Déblocage rapide</li>
+                        <li><i class="fas fa-check"></i> Déblocage rapide de situation</li>
                         <li><i class="fas fa-check"></i> Outils de médiation</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
@@ -279,7 +238,7 @@
                     <i class="fas fa-user-tie main-icon"></i>
                     <h3>Accompagnement individuel</h3>
                     <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel ou Visio</span>
-                    <span class="duration-info">Demi-journée <br>(travail en profondeur)</span>
+                    <span class="duration-info">Format : Demi-journée <br>(travail de posture)</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Suivi individuel personnalisé</li>
                         <li><i class="fas fa-check"></i> Posture et gestion de conflit</li>
@@ -328,19 +287,14 @@
             
            <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
     <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
-    
     <input type="text" name="nom_entreprise" placeholder="Votre nom et entreprise" required>
     <input type="email" name="email" placeholder="Votre email professionnel" required>
     <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
     <textarea name="message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
-    
-    <input type="hidden" name="_subject" value="Nouveau contact Cohelisens">
-    
     <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0 0 0;">Envoyer ma demande</button>
 </form>
        <div style="text-align: center; margin-top: 25px;">
-    <p style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 15px; color: #fff;">Pour aller plus loin :</p>
-    <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 10px 20px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s;">
+    <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 10px 20px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
         <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn 🤝
     </a>
 </div>
