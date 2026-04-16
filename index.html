@@ -62,11 +62,6 @@
             font-weight: 700;
         }
 
-        @media (max-width: 600px) {
-            .hero { padding-top: 150px; } 
-            .logo { left: 50%; transform: translateX(-50%); width: 120px; } 
-        }
-
         /* --- BOUTONS --- */
         .btn-or { background: var(--or-cohelisens); color: var(--bleu-petrole-profond); padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; display: inline-block; margin: 10px; font-size: 1rem; transition: transform 0.2s; }
         .btn-or:hover { transform: scale(1.05); }
@@ -154,7 +149,7 @@
         <img src="image_a0038e.png" alt="Logo COHÉLISENS" class="logo">
         <div class="container">
             <h1 style="color: #ffffff; margin-bottom: 20px;">COHÉLISENS</h1>
-            <p class="subtitle" style="color: #ffffff; margin-bottom: 40px; font-style: normal; letter-spacing: 2px;">Cohésion, Liens, Sens</p>
+            <p class="subtitle" style="color: #ffffff; margin-bottom: 40px; font-style: normal; letter-spacing: 2px; text-transform: uppercase; font-weight: 300;">Cohésion, Liens, Sens</p>
 
             <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.2); width: 100px; margin: 20px auto;">
 
@@ -166,6 +161,10 @@
 
             <p style="font-size: 1.2rem; max-width: 850px; margin: 0 auto 20px auto; font-weight: 400; color: #ffffff;">
                 Forte de 20 ans d'expérience terrain, je vous accompagne afin de transformer les tensions en impact positif sur la cohésion d'équipe, sans jargon ni catalogue.
+            </p>
+
+            <p style="font-size: 1.1rem; max-width: 850px; margin: 0 auto 30px auto; font-weight: 300; color: #ffffff; opacity: 0.9;">
+                Aujourd'hui, je mets cette expertise à votre service, ainsi qu'à celle de vos équipes, tous secteurs et métiers confondus.
             </p>
 
             <div style="margin-top: 30px;">
@@ -212,7 +211,7 @@
                     <i class="fas fa-calendar-alt main-icon"></i>
                     <h3>Atelier Terrain A.C.R.C.</h3>
                     <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel</span>
-                    <span class="duration-info">Journée complète</span>
+                    <span class="duration-info">Format : Journée complète</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Transmission de la méthode intégrale</li>
                         <li><i class="fas fa-check"></i> Cas pratiques issus de votre quotidien</li>
@@ -229,7 +228,7 @@
                     <ul>
                         <li><i class="fas fa-check"></i> Focus problématique spécifique</li>
                         <li><i class="fas fa-check"></i> Déblocage rapide de situation</li>
-                        <li><i class="fas fa-check"></i> Outils de médiation</li>
+                        <li><i class="fas fa-check"></i> Outils de médiation immédiats</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
                 </div>
@@ -238,10 +237,10 @@
                     <i class="fas fa-user-tie main-icon"></i>
                     <h3>Accompagnement individuel</h3>
                     <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel ou Visio</span>
-                    <span class="duration-info">Demi-journée <br>(travail de posture)</span>
+                    <span class="duration-info">Format : Demi-journée <br>(travail de posture)</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Suivi individuel personnalisé</li>
-                        <li><i class="fas fa-check"></i> Posture et gestion de conflit</li>
+                        <li><i class="fas fa-check"></i> Musclage de la posture pro</li>
                         <li><i class="fas fa-check"></i> Coaching de déblocage</li>
                     </ul>
                 </div>
@@ -286,18 +285,19 @@
             <p style="opacity: 0.9;">Faisons le point ensemble pour une proposition adaptée.</p>
             
            <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
-    <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
-    <input type="text" name="nom_entreprise" placeholder="Votre nom et entreprise" required>
-    <input type="email" name="email" placeholder="Votre email professionnel" required>
-    <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
-    <textarea name="message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
-    <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0 0 0;">Envoyer ma demande</button>
-</form>
-       <div style="text-align: center; margin-top: 25px;">
-    <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 10px 20px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
-        <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn 🤝
-    </a>
-</div>
+                <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
+                <input type="text" name="nom_entreprise" placeholder="Votre nom et entreprise" required>
+                <input type="email" name="email" placeholder="Votre email professionnel" required>
+                <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
+                <textarea name="message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
+                <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0 0 0;">Envoyer ma demande</button>
+            </form>
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 10px 20px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
+                    <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn 🤝
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer>
