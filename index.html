@@ -97,49 +97,23 @@
         .offre-card i.main-icon { font-size: 2.5rem; color: var(--or-cohelisens); display: block; text-align: center; margin-bottom: 15px; }
         .offre-card h3 { text-align: center; border-bottom: 1px solid rgba(232, 168, 48, 0.2); padding-bottom: 15px; margin-bottom: 15px; }
         
-        .badge-choice { 
-            display: block; 
-            text-align: center; 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            color: var(--or-cohelisens); 
-            margin-bottom: 10px; 
-            font-weight: 700;
-        }
-
-        .duration-info {
-            display: block;
-            text-align: center;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            font-style: italic;
-            opacity: 0.9;
-            color: var(--blanc-pur);
-        }
-
+        .badge-choice { display: block; text-align: center; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--or-cohelisens); margin-bottom: 10px; font-weight: 700;}
+        .duration-info { display: block; text-align: center; font-size: 0.85rem; margin-bottom: 20px; font-style: italic; opacity: 0.9; color: var(--blanc-pur);}
         .offre-card ul { list-style: none; padding: 0; font-size: 1rem; flex-grow: 1; }
         .offre-card li { margin-bottom: 12px; display: flex; align-items: flex-start; }
         .offre-card li i { color: var(--or-cohelisens); margin-right: 12px; margin-top: 5px; }
-        
-        .footer-notes { font-size: 0.9rem; max-width: 800px; margin: 20px auto 0 auto; line-height: 1.5; }
 
         /* --- FORMULAIRE --- */
         .contact-form { max-width: 600px; margin: 40px auto 0; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; }
         .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; box-sizing: border-box; font-family: inherit; }
 
-        footer { padding: 40px 0; background: #0c1d30; font-size: 0.75rem; }
+        footer { padding: 40px 0; background: #0c1d30; font-size: 0.85rem; }
 
         @media (max-width: 768px) {
-            body { font-size: 15px; }
-            .hero { padding: 40px 20px; min-height: auto; }
-            .logo { position: relative; top: 0; left: 0; width: 140px; margin: 0 auto 30px auto; display: block; }
-            .hero h1 { font-size: 2.2rem; }
-            section { padding: 60px 0; }
-            h2 { font-size: 1.6rem; }
-            .profile-flex { flex-direction: column; text-align: center; gap: 30px; }
+            .hero { padding-top: 150px; }
+            .logo { position: absolute; left: 50%; transform: translateX(-50%); width: 120px; }
+            .profile-flex { flex-direction: column; text-align: center; }
             .profile-img { width: 180px; height: 180px; }
-            .btn-or, .btn-outline { width: 100%; margin: 5px 0; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -148,8 +122,8 @@
    <header class="hero">
         <img src="image_a0038e.png" alt="Logo COHÉLISENS" class="logo">
         <div class="container">
-            <h1 style="color: #ffffff; margin-bottom: 20px;">COHÉLISENS</h1>
-            <p class="subtitle" style="color: #ffffff; margin-bottom: 40px; font-style: normal; letter-spacing: 2px; text-transform: uppercase; font-weight: 300;">Cohésion, Liens, Sens</p>
+            <h1>COHÉLISENS</h1>
+            <p class="subtitle" style="font-style: normal; letter-spacing: 2px; text-transform: uppercase;">Cohésion, Liens, Sens</p>
 
             <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.2); width: 100px; margin: 20px auto;">
 
@@ -159,11 +133,11 @@
                 Moins de tension, <br><span style="color:var(--or-cohelisens)">plus de cohésion.</span>
             </h2>
 
-            <p style="font-size: 1.2rem; max-width: 850px; margin: 0 auto 20px auto; font-weight: 400; color: #ffffff;">
+            <p style="font-size: 1.2rem; max-width: 850px; margin: 0 auto 20px auto;">
                 Forte de 20 ans d'expérience terrain, je vous accompagne afin de transformer les tensions en impact positif sur la cohésion d'équipe, sans jargon ni catalogue.
             </p>
 
-            <p style="font-size: 1.1rem; max-width: 850px; margin: 0 auto 30px auto; font-weight: 300; color: #ffffff; opacity: 0.9;">
+            <p style="font-size: 1.1rem; max-width: 850px; margin: 0 auto 30px auto; font-weight: 300; opacity: 0.9;">
                 Aujourd'hui, je mets cette expertise à votre service, ainsi qu'à celle de vos équipes, tous secteurs et métiers confondus.
             </p>
 
@@ -194,9 +168,39 @@
             <p class="subtitle">Une méthode pensée en 4 étapes simples que chaque collaborateur peut s'approprier.</p>
             <div class="grid-cards">
                 <div class="card"><span class="letter">A</span><h3>Accueillir</h3><p>Désamorcer la charge émotionnelle et sécuriser l’échange.</p></div>
-                <div class="card"><span class="letter">C</span><h3>Clarifier</h3><p>Identifier les faits et les besoins réels sous-jacents.</p></div>
+                <div class="card"><span class="letter">C</span><h3>Clarifier</h3><p>Identifier les faits et les besoins réels.</p></div>
                 <div class="card"><span class="letter">R</span><h3>Recadrer</h3><p>Revenir aux objectifs communs et aux règles de base.</p></div>
                 <div class="card"><span class="letter">C</span><h3>Conclure</h3><p>Valider un plan d’action immédiat et concret.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container">
+            <h2>Résultats attendus</h2>
+            <p class="subtitle" style="color: var(--bleu-petrole-profond)">Ce que mon intervention change concrètement pour vous :</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Sérénité retrouvée</h3>
+                    <p>Réduction du stress lié aux interactions quotidiennes.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hourglass-half"></i>
+                    <h3>Efficacité & Temps</h3>
+                    <p>Gain de productivité grâce à des échanges plus fluides et cadrés.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Compétences Soft Skills</h3>
+                    <p>Montée en compétences sur la posture, le relationnel et le savoir-être.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-star"></i>
+                    <h3>Image de marque</h3>
+                    <p>Des collaborateurs qui deviennent de meilleurs ambassadeurs de votre structure.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -210,46 +214,42 @@
                 <div class="offre-card">
                     <i class="fas fa-calendar-alt main-icon"></i>
                     <h3>Atelier Terrain A.C.R.C.</h3>
-                    <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel</span>
-                    <span class="duration-info">Format : Journée complète</span>
+                    <span class="badge-choice">Présentiel</span>
+                    <span class="duration-info">Journée complète</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Transmission de la méthode intégrale</li>
-                        <li><i class="fas fa-check"></i> Cas pratiques issus de votre quotidien</li>
-                        <li><i class="fas fa-check"></i> Plan d'action collectif immédiat</li>
+                        <li><i class="fas fa-check"></i> Cas pratiques réels issus de votre quotidien</li>
+                        <li><i class="fas fa-check"></i> Plan d'action collectif</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
                 </div>
-
                 <div class="offre-card">
                     <i class="fas fa-bolt main-icon"></i>
                     <h3>Session Renfort</h3>
-                    <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel ou Visio</span>
+                    <span class="badge-choice">Présentiel ou Visio</span>
                     <span class="duration-info">Journée complète ou demi-journée <br>(selon l'intensité du besoin)</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Focus problématique spécifique</li>
-                        <li><i class="fas fa-check"></i> Déblocage rapide de situation</li>
-                        <li><i class="fas fa-check"></i> Outils de médiation immédiats</li>
+                        <li><i class="fas fa-check"></i> Déblocage de situation</li>
+                        <li><i class="fas fa-check"></i> Outils de médiation opérationnels</li>
                         <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
                     </ul>
                 </div>
-
                 <div class="offre-card">
                     <i class="fas fa-user-tie main-icon"></i>
                     <h3>Accompagnement individuel</h3>
-                    <span class="badge-choice"><i class="fas fa-check-circle"></i> Présentiel ou Visio</span>
-                    <span class="duration-info">Format : Demi-journée <br>(travail de posture)</span>
+                    <span class="badge-choice">Présentiel ou Visio</span>
+                    <span class="duration-info">Demi-journée</span>
                     <ul>
-                        <li><i class="fas fa-check"></i> Suivi individuel personnalisé</li>
-                        <li><i class="fas fa-check"></i> Musclage de la posture pro</li>
+                        <li><i class="fas fa-check"></i> Suivi personnalisé</li>
+                        <li><i class="fas fa-check"></i> Musclage de la posture professionnelle</li>
                         <li><i class="fas fa-check"></i> Coaching de déblocage</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-notes">
-                <p style="font-size: 1.1rem; border: 1px dashed var(--or-cohelisens); padding: 25px; border-radius: 10px; background-color: rgba(232, 168, 48, 0.05);">
-                    <strong>Note :</strong> Le tarif est établi sur-mesure selon vos besoins, recensés par un questionnaire personnalisé envoyé au préalable.
-                </p>
+            <div style="font-size: 1rem; border: 1px dashed var(--or-cohelisens); padding: 20px; border-radius: 10px; background-color: rgba(232, 168, 48, 0.05); max-width: 800px; margin: 30px auto 0 auto;">
+                <strong>Note :</strong> Le tarif est établi sur-mesure selon vos besoins, recensés par un questionnaire personnalisé envoyé au préalable.
             </div>
         </div>
     </section>
@@ -257,43 +257,34 @@
     <section class="bg-white">
         <div class="container">
             <h2>Mesure d'impact à J+30</h2>
-            <p class="subtitle" style="color: #E8A830; font-weight: 600; opacity: 1;">Ancrer les changements durablement dans votre quotidien.</p>
             <div class="grid-cards">
-                <div class="card" style="background:#f9f9f9">
-                    <i class="fas fa-clipboard-list"></i>
-                    <h3>Feedback</h3>
-                    <p>Mesure précise des changements observés sur le terrain via un questionnaire.</p>
-                </div>
-                <div class="card" style="background:#f9f9f9">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Appel Bilan</h3>
-                    <p>Analyse conjointe des résultats et ajustements si besoin à J+30.</p>
-                </div>
-                <div class="card" style="background:#f9f9f9">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Compte-rendu</h3>
-                    <p>Synthèse écrite de l'intervention et préconisations futures.</p>
-                </div>
+                <div class="card" style="background:#f9f9f9"><i class="fas fa-clipboard-list"></i><h3>Feedback</h3><p>Mesure des changements observés sur le terrain via un questionnaire.</p></div>
+                <div class="card" style="background:#f9f9f9"><i class="fas fa-phone-alt"></i><h3>Appel Bilan</h3><p>Analyse conjointe des résultats et ajustements si besoin.</p></div>
+                <div class="card" style="background:#f9f9f9"><i class="fas fa-file-alt"></i><h3>Compte-rendu</h3><p>Synthèse écrite de l'intervention et préconisations futures.</p></div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-dark">
+    <section id="contact" class="bg-dark" style="border-top: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
             <h2>Parlons de vos besoins</h2>
-            <p style="color: var(--or-cohelisens); font-weight: 700; font-size: 1.2rem;">Un échange de 20 minutes offert</p>
-            <p style="opacity: 0.9;">Faisons le point ensemble pour une proposition adaptée.</p>
+            <p style="color: var(--or-cohelisens); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">Un échange de 20 minutes offert</p>
+            <p style="color: var(--blanc-pur); font-weight: 400; font-size: 1rem; margin-top: 0; margin-bottom: 30px;">Faisons le point ensemble pour une proposition adaptée.</p>
             
-           <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
+            <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
                 <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
                 <input type="text" name="nom_entreprise" placeholder="Votre nom et entreprise" required>
                 <input type="email" name="email" placeholder="Votre email professionnel" required>
                 <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
                 <textarea name="message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
-                <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0 0 0;">Envoyer ma demande</button>
+                <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0;">Envoyer ma demande</button>
             </form>
-            <div style="text-align: center; margin-top: 25px;">
-                <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 10px 20px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
+
+            <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <a href="tel:+33745915946" style="display: inline-block; padding: 12px 25px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> 07 45 91 59 46
+                </a>
+                <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 12px 25px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
                     <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn 🤝
                 </a>
             </div>
@@ -302,8 +293,9 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 COHÉLISENS, Reims – SIRET : 10295516800012</p>
-            <p style="opacity:0.6; margin-top: 15px;">TVA non applicable, art. 293 B du CGI</p>
+            <p><strong>COHÉLISENS</strong> – Soni NGUFULU</p>
+            <p><i class="fas fa-phone-alt"></i> 07 45 91 59 46 | <i class="fas fa-envelope"></i> sngufulu@cohelisens.com</p>
+            <p style="opacity:0.6; margin-top: 15px; font-size: 0.75rem;">Reims | SIRET : 10295516800012 | TVA non applicable (art. 293 B du CGI)</p>
         </div>
     </footer>
 
