@@ -47,7 +47,6 @@
             justify-content: center; 
             align-items: center; 
             padding: 160px 0 100px 0; 
-            /* Filtre bleu pétrole superposé à l'image pour l'effet "fond transparent" */
             background: linear-gradient(rgba(26, 58, 92, 0.85), rgba(26, 58, 92, 0.85)), 
                         url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-repeat: no-repeat;
@@ -104,18 +103,63 @@
         .letter { font-size: 3rem; font-weight: 700; color: var(--or-cohelisens); display: block; margin-bottom: 10px; }
         .card i { font-size: 2.5rem; color: var(--or-cohelisens); margin-bottom: 20px; }
 
-        /* --- OFFRES --- */
-        .grid-offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 40px 0; }
-        .offre-card { background: var(--bleu-petrole-pro); color: var(--blanc-pur); border: 1px solid rgba(232, 168, 48, 0.3); padding: 35px 25px; border-radius: 15px; text-align: left; transition: transform 0.3s; position: relative; display: flex; flex-direction: column; }
+        /* --- OFFRES (CORRECTION ALIGNEMENT) --- */
+        .grid-offers { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); /* Force 4 colonnes sur PC */
+            gap: 20px; 
+            margin: 40px 0; 
+            align-items: stretch;
+        }
+
+        .offre-card { 
+            background: var(--bleu-petrole-pro); 
+            color: var(--blanc-pur); 
+            border: 1px solid rgba(232, 168, 48, 0.3); 
+            padding: 35px 20px; 
+            border-radius: 15px; 
+            text-align: left; 
+            transition: transform 0.3s; 
+            position: relative; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
         .offre-card:hover { transform: translateY(-5px); }
+
+        /* Mise en évidence de l'offre spéciale */
+        .offre-card.special {
+            border: 3px solid var(--or-cohelisens);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .offre-card.special:hover { transform: scale(1.08); }
+
+        .ribbon { 
+            position: absolute; 
+            top: -12px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: var(--or-cohelisens); 
+            color: var(--bleu-petrole-profond); 
+            padding: 5px 15px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            border-radius: 5px; 
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
         .offre-card i.main-icon { font-size: 2.5rem; color: var(--or-cohelisens); display: block; text-align: center; margin-bottom: 15px; }
         .offre-card h3 { text-align: center; border-bottom: 1px solid rgba(232, 168, 48, 0.2); padding-bottom: 15px; margin-bottom: 15px; }
         
         .badge-choice { display: block; text-align: center; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--or-cohelisens); margin-bottom: 10px; font-weight: 700;}
         .duration-info { display: block; text-align: center; font-size: 0.85rem; margin-bottom: 20px; font-style: italic; opacity: 0.9; color: var(--blanc-pur);}
-        .offre-card ul { list-style: none; padding: 0; font-size: 1rem; flex-grow: 1; }
+        .offre-card ul { list-style: none; padding: 0; font-size: 0.95rem; flex-grow: 1; }
         .offre-card li { margin-bottom: 12px; display: flex; align-items: flex-start; }
-        .offre-card li i { color: var(--or-cohelisens); margin-right: 12px; margin-top: 5px; }
+        .offre-card li i { color: var(--or-cohelisens); margin-right: 12px; margin-top: 5px; font-size: 0.8rem; }
 
         /* --- FORMULAIRE --- */
         .contact-form { max-width: 600px; margin: 40px auto 0; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; }
@@ -123,11 +167,28 @@
 
         footer { padding: 40px 0; background: #0c1d30; font-size: 0.85rem; }
 
+        /* --- ANIMATION STYLE --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .grid-offers { grid-template-columns: repeat(2, 1fr); }
+            .offre-card.special { transform: scale(1); margin-bottom: 20px; }
+        }
+
         @media (max-width: 768px) {
             .hero { padding-top: 150px; }
             .logo { position: absolute; left: 50%; transform: translateX(-50%); width: 120px; }
             .profile-flex { flex-direction: column; text-align: center; }
             .profile-img { width: 180px; height: 180px; }
+            .grid-offers { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -148,11 +209,11 @@
             </h2>
 
             <p style="font-size: 1.2rem; max-width: 850px; margin: 0 auto 20px auto;">
-                Forte de 20 ans d'expérience terrain, je vous accompagne afin de transformer les tensions en impact positif sur la cohésion d'équipe, sans jargon ni catalogue.
+                Forte de 20 ans d'expérience terrain, j'accompagne les acteurs de la TPE et PME vers une cohésion d'équipe, sans jargon ni catalogue,
             </p>
 
             <p style="font-size: 1.1rem; max-width: 850px; margin: 0 auto 30px auto; font-weight: 300; opacity: 0.9;">
-                Aujourd'hui, je mets cette expertise à votre service, ainsi qu'à celle de vos équipes, tous secteurs et métiers confondus.
+                Aujourd'hui, je mets cette expertise au service des dirigeants de TPE-PME, managers et collaborateurs, ainsi qu'à celui de leurs équipes, tous secteurs et métiers confondus.
             </p>
 
             <div style="margin-top: 35px;">
@@ -179,10 +240,11 @@
     <section class="bg-dark">
         <div class="container">
             <h2>Mon approche</h2>
-            <p class="subtitle">La méthode ACRC, pensée en 4 étapes simples, centrée sur le sens pour retrouver la cohésion. Chaque collaborateur peut se l’approprier.</p>
+          
+            <p class="subtitle">La méthode A-C-R-C, pensée en 4 étapes simples, centrée sur le sens pour retrouver la cohésion. Chaque collaborateur peut se l'approprier.</p>
             <div class="grid-cards">
                 <div class="card"><span class="letter">A</span><h3>Accueillir</h3><p>Désamorcer la charge émotionnelle et sécuriser l’échange.</p></div>
-                <div class="card"><span class="letter">C</span><h3>Clarifier</h3><p>Identifier les faits et les besoins réels sous-jacents.</p></div>
+                <div class="card"><span class="letter">C</span><h3>Clarifier</h3><p>Identifier les faits et les besoins réels.</p></div>
                 <div class="card"><span class="letter">R</span><h3>Recadrer</h3><p>Revenir aux objectifs communs et aux règles de base.</p></div>
                 <div class="card"><span class="letter">C</span><h3>Conclure</h3><p>Valider un plan d’action immédiat et concret.</p></div>
             </div>
@@ -198,7 +260,7 @@
                 <div class="card">
                     <i class="fas fa-heartbeat"></i>
                     <h3>Sérénité retrouvée</h3>
-                    <p>Réduction immédiate du stress lié aux interactions conflictuelles quotidiennes.</p>
+                    <p>Réduction immédiate du stress lié aux interactions quotidiennes.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-hourglass-half"></i>
@@ -207,8 +269,8 @@
                 </div>
                 <div class="card">
                     <i class="fas fa-handshake"></i>
-                    <h3>Intelligence Relationnelle</h3>
-                    <p>Montée en compétences durable sur la posture et le savoir-être en action.</p>
+                    <h3>Compétences Soft Skills</h3>
+                    <p>Montée en compétences durable sur le savoir-être.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-star"></i>
@@ -219,26 +281,55 @@
         </div>
     </section>
 
+    <section class="bg-white">
+        <div class="container reveal">
+            <h2 style="color: var(--bleu-petrole-profond)">Ils m'ont fait confiance</h2>
+            <div style="max-width: 850px; margin: 40px auto; background: #f9f9f9; color: var(--bleu-petrole-profond); padding: 40px; border-radius: 20px; border-left: 8px solid var(--or-cohelisens); text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8;">
+                    "Les tensions entre mes coordinateurs et nos prestataires peuvent parfois être houleuses et impacter les événements organisés. Nous avons fait confiance à Soni pour y remédier. Ce qui m'a frappée, c'est son dynamisme et sa capacité à s'adapter à la personnalité de chacun, avec des mots simples et une méthode facile à appliquer au quotidien. L'amélioration s'est ressentie lors d'une récente prestation : c'est très encourageant."
+                </p>
+                <p style="margin-top: 20px; font-weight: 700; color: var(--bleu-petrole-profond); margin-bottom: 0;">K. Tsigani</p>
+                <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">Responsable agence événementielle | Avril 2026</p>
+            </div>
+        </div>
+    </section>
+
     <section id="offre" class="bg-dark">
         <div class="container">
             <h2>Ce que je propose</h2>
-            <p style="font-style: italic; color: var(--or-cohelisens); font-size: 1.2rem; margin-bottom: 40px;">"Le coût des tensions relationnelles est toujours supérieur à celui d'une intervention ciblée."</p>
-            
             <div class="grid-offers">
+                
+                <div class="offre-card special">
+                    <div class="ribbon">Le plus populaire</div>
+                    <i class="fas fa-bolt main-icon"></i>
+                    <h3>Offre Découverte</h3>
+                    <span class="badge-choice">Présentiel ou Visio</span>
+                    <span class="duration-info">Demi-journée</span>
+                    <ul>
+                      <li><i class="fas fa-check"></i> <em>Idéal pour découvrir mon approche</em></li>
+                    </ul>
+                      <li><i class="fas fa-check"></i> <strong>Diagnostic immédiat</strong></li>
+                      <li><i class="fas fa-check"></i> Initiation à la méthode A-C-R-C</li>
+                      <li><i class="fas fa-check"></i> 1 levier d'action concret à tester</li>
+                      <li><i class="fas fa-check"></i> <strong>10 participants maximum</strong></li>
+                      
+                </div>
+
                 <div class="offre-card">
                     <i class="fas fa-calendar-alt main-icon"></i>
                     <h3>Atelier Terrain</h3>
-                    <span class="badge-choice">Présentiel</span>
+                    <span class="badge-choice">Présentiel ou Visio</span>
                     <span class="duration-info">Journée complète</span>
                     <ul>
                         <li><i class="fas fa-check"></i> Transmission de la méthode intégrale</li>
                         <li><i class="fas fa-check"></i> Cas pratiques réels issus du terrain</li>
                         <li><i class="fas fa-check"></i> Plan d'action collectif immédiat</li>
-                        <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>10 participants maximum</strong></li>
                     </ul>
                 </div>
+
                 <div class="offre-card">
-                    <i class="fas fa-bolt main-icon"></i>
+                    <i class="fas fa-users main-icon"></i>
                     <h3>Session Renfort</h3>
                     <span class="badge-choice">Présentiel ou Visio</span>
                     <span class="duration-info">Journée complète ou demi-journée <br>(selon l'intensité du besoin)</span>
@@ -246,24 +337,26 @@
                         <li><i class="fas fa-check"></i> Focus problématique spécifique</li>
                         <li><i class="fas fa-check"></i> Déblocage rapide de situation</li>
                         <li><i class="fas fa-check"></i> Outils de médiation opérationnels</li>
-                        <li><i class="fas fa-check"></i> <strong>12 participants maximum</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>10 participants maximum</strong></li>
                     </ul>
                 </div>
+
                 <div class="offre-card">
                     <i class="fas fa-user-tie main-icon"></i>
                     <h3>Accompagnement individuel</h3>
-                    <span class="badge-choice">Présentiel ou Visio</span>
-                    <span class="duration-info">Demi-journée</span>
+                    <span class="badge-choice">Présentiel ou visio</span>
+                     <span class="duration-info">Demi-journée</span>
                     <ul>
-                        <li><i class="fas fa-check"></i> Suivi personnalisé en profondeur</li>
-                        <li><i class="fas fa-check"></i> Musclage de la posture professionnelle</li>
-                        <li><i class="fas fa-check"></i> Coaching de déblocage individuel</li>
+                        <li><i class="fas fa-check"></i> Suivi personnalisé manager</li>
+                        <li><i class="fas fa-check"></i> Travail sur la posture professionnelle</li>
+                        <li><i class="fas fa-check"></i> Coaching de déblocage postural</li>
+                        <li><i class="fas fa-check"></i> Transformation des freins en leviers</li>
                     </ul>
                 </div>
+
             </div>
-            
-            <div style="font-size: 1rem; border: 1px dashed var(--or-cohelisens); padding: 20px; border-radius: 10px; background-color: rgba(232, 168, 48, 0.05); max-width: 800px; margin: 30px auto 0 auto;">
-                <strong>Note :</strong> Le tarif est établi sur-mesure selon vos besoins, recensés par un questionnaire personnalisé envoyé au préalable.
+            <div style="font-size: 0.9rem; border: 1px dashed var(--or-cohelisens); padding: 15px; margin-top: 20px;">
+               Note : Le tarif est établi sur-mesure selon vos besoins, recensés par un questionnaire personnalisé envoyé au préalable.
             </div>
         </div>
     </section>
@@ -281,10 +374,10 @@
 
     <section id="contact" class="bg-dark" style="border-top: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
-            <h2>Parlons de vos besoins</h2>
-            <p style="color: var(--or-cohelisens); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">Un échange de 20 minutes offert</p>
-            <p style="color: var(--blanc-pur); font-weight: 400; font-size: 1rem; margin-top: 0; margin-bottom: 30px;">Faisons le point ensemble pour une proposition adaptée.</p>
+             <h2>Parlons de vos besoins</h2>
             
+            <p style="color: var(--blanc-pur); font-weight: 400; font-size: 1rem; margin-top: 0; margin-bottom: 30px;">Faisons le point ensemble pour une proposition adaptée.</p>
+            <p style="color: var(--or-cohelisens); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px;">Un échange de 20 minutes offert</p>
             <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
                 <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
                 <input type="text" name="nom_entreprise" placeholder="Votre nom et entreprise" required>
@@ -309,9 +402,32 @@
         <div class="container">
             <p><strong>COHÉLISENS</strong> – Soni NGUFULU</p>
             <p><i class="fas fa-phone-alt"></i> 07 45 91 59 46 | <i class="fas fa-envelope"></i> sngufulu@cohelisens.com</p>
-            <p style="opacity:0.6; margin-top: 15px; font-size: 0.75rem;">Reims | SIRET : 10295516800012 | TVA non applicable (art. 293 B du CGI)</p>
+            <div style="margin: 15px 0;">
+                <a href="cgv.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px; opacity: 0.8;">CGV</a>
+                <a href="politique-confidentialite.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px; opacity: 0.8;">Confidentialité</a>
+                <a href="charte-ethique.html" style="color: #ffffff; text-decoration: underline; margin: 0 10px; opacity: 0.8;">Charte éthique</a>
+            </div>
+            <p style="opacity:0.6; margin-top: 15px; font-size: 0.75rem;">
+                Reims | SIRET : 10295516800012 | TVA non applicable (art. 293 B du CGI)
+            </p>
         </div>
     </footer>
+
+    <script>
+        function reveal() {
+          var reveals = document.querySelectorAll(".reveal");
+          for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+              reveals[i].classList.add("active");
+            }
+          }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
 
 </body>
 </html>
