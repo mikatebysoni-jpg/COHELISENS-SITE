@@ -1,164 +1,629 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CK1BK9X7F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2CK1BK9X7F');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COHÉLISENS — En évolution</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>COHÉLISENS | Soni NGUFULU - Diagnostic Cohésion et Relations Humaines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+        :root {
+            --bleu-petrole-profond: #1a3a5c;
+            --bleu-petrole-pro: #214b75;
+            --or-cohelisens: #E8A830; 
+            --blanc-pur: #ffffff;
+            --gris-fond: #f9f9f9;
         }
+
+        html { scroll-behavior: smooth; }
         body { 
             font-family: 'Montserrat', sans-serif; 
-            background-color: #1a3a5c; /* Votre bleu pétrole profond */
-            color: #ffffff; 
-            display: flex; 
+            margin: 0; 
+            color: var(--blanc-pur); 
+            background-color: var(--bleu-petrole-profond); 
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+        h2 { font-size: 2rem; color: var(--or-cohelisens); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+        .subtitle { font-style: italic; font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; font-weight: 300; }
+        h3 { color: var(--or-cohelisens); margin-bottom: 15px; font-size: 1.3rem; }
+        p { line-height: 1.6; margin-bottom: 20px; font-weight: 300; }
+
+        /* --- HERO & LOGO --- */
+       .hero {
+            display: flex;
+            flex-direction: column;
             justify-content: center; 
             align-items: center; 
-            min-height: 100vh; 
-            padding: 40px 20px; 
-            text-align: center; 
+            padding: 160px 0 100px 0; 
+            background: linear-gradient(rgba(26, 58, 92, 0.85), rgba(26, 58, 92, 0.85)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 500px;
+            text-align: center;
+            position: relative; 
         }
-        .container { 
-            max-width: 600px; 
-            width: 100%;
-        }
-        .logo {
-            width: 160px;
+
+        .logo { 
+            position: absolute; 
+            top: 30px; 
+            left: 30px; 
+            width: 160px; 
             height: auto;
-            margin-bottom: 25px;
+            z-index: 10; 
         }
-        h1 { 
-            font-size: 2.2rem; 
-            color: #ffffff; /* Écrit en blanc comme demandé */
-            margin-bottom: 25px; 
-            font-weight: 700; 
+
+        .badge-premium {
+            background: rgba(232, 168, 48, 0.15);
+            border: 1px solid var(--or-cohelisens);
+            color: var(--or-cohelisens);
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: inline-block;
         }
-        p { 
-            font-size: 1.1rem; 
-            line-height: 1.7; 
+
+        .hero h1 { 
+            font-size: clamp(1.8rem, 5vw, 2.8rem); 
             color: #ffffff; 
             margin-bottom: 20px; 
-            font-weight: 300;
+            text-transform: none;
+            line-height: 1.3;
+            font-weight: 700;
+            max-width: 900px;
+            letter-spacing: normal;
         }
-        .highlight { 
-            font-size: 1.3rem;
-            font-weight: 400; 
-            color: #E8A830; /* Votre Or Cohelisens */
-            margin-bottom: 25px;
-            font-style: italic;
+
+        /* --- BOUTONS --- */
+        .btn-or { background: var(--or-cohelisens); color: var(--bleu-petrole-profond); padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; display: inline-block; margin: 10px; font-size: 1rem; transition: transform 0.2s, background-color 0.2s; }
+        .btn-or:hover { transform: scale(1.05); background: #f0b84c; }
+        .btn-outline { background: transparent; border: 2px solid var(--or-cohelisens); color: var(--or-cohelisens); padding: 13px 28px; border-radius: 5px; text-decoration: none; font-weight: 700; display: inline-block; margin: 10px; font-size: 1rem; transition: background 0.2s; }
+        .btn-outline:hover { background: rgba(232, 168, 48, 0.1); }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 0; }
+        .bg-white { background-color: var(--blanc-pur); color: var(--bleu-petrole-profond); }
+        .bg-dark { background-color: var(--bleu-petrole-pro); }
+
+        /* --- SITUATIONS TYPIQUES (GRID 6 CARDS) --- */
+        .grid-situations { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card-situation { background: var(--gris-fond); color: var(--bleu-petrole-profond); padding: 30px; border-radius: 10px; text-align: left; border-top: 4px solid var(--bleu-petrole-profond); transition: transform 0.3s; }
+        .card-situation:hover { transform: translateY(-5px); border-top-color: var(--or-cohelisens); }
+        .card-situation h4 { margin: 0 0 12px 0; font-size: 1.2rem; color: var(--bleu-petrole-profond); font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .card-situation h4 i { color: var(--or-cohelisens); font-size: 1.1rem; }
+        .card-situation p { margin: 0; font-size: 0.95rem; color: #4a5568; line-height: 1.5; }
+
+        /* --- AUTORITÉ & BUSINESS IMPACT --- */
+        .autorite-flex { display: flex; gap: 40px; margin-top: 40px; text-align: left; }
+        .autorite-block { flex: 1; background: rgba(255,255,255,0.03); padding: 35px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .liste-check { list-style: none; padding: 0; margin: 0; }
+        .liste-check li { margin-bottom: 12px; display: flex; align-items: flex-start; font-weight: 300; }
+        .liste-check li i { color: var(--or-cohelisens); margin-right: 12px; margin-top: 4px; }
+
+        /* --- QUI SUIS-JE --- */
+        .profile-flex { display: flex; align-items: flex-start; gap: 50px; text-align: left; max-width: 950px; margin: 0 auto; }
+        .profile-img { 
+            width: 220px; 
+            height: 220px; 
+            border-radius: 20px; 
+            object-fit: cover; 
+            object-position: center 20%; 
+            border: 6px solid var(--bleu-petrole-profond); 
+            flex-shrink: 0; 
+            margin-top: 10px;
         }
-        .form-section { 
-            margin-top: 40px; 
-            border-top: 1px solid rgba(255, 255, 255, 0.2); 
-            padding-top: 30px; 
+        .profile-text p { margin-bottom: 15px; }
+
+        /* --- GRILLES (METHODE ACRC & RESULTATS) --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: var(--blanc-pur); color: var(--bleu-petrole-profond); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: center; }
+        .letter { font-size: 3rem; font-weight: 700; color: var(--or-cohelisens); display: block; margin-bottom: 10px; }
+        .card i { font-size: 2.5rem; color: var(--or-cohelisens); margin-bottom: 20px; }
+
+        /* --- L'APPROCHE (NOTRE STRATEGIE TERRAIN) --- */
+        .approche-container { max-width: 900px; margin: 40px auto 0 auto; text-align: left; }
+        .approche-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px; background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 10px; border-left: 4px solid var(--or-cohelisens); }
+        .approche-item i { color: var(--or-cohelisens); font-size: 1.5rem; margin-top: 3px; flex-shrink: 0; }
+        .approche-item h4 { margin: 0 0 8px 0; font-size: 1.2rem; color: var(--or-cohelisens); font-weight: 700; }
+        .approche-item p { margin: 0; font-size: 1rem; }
+
+        /* --- PARCOURS UNIQUE EN 3 NIVEAUX --- */
+        .parcours-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 20px;
+            margin: 40px 0;
             text-align: left;
         }
-        .form-title {
-            font-size: 1rem;
-            color: #E8A830;
+
+        .parcours-etape {
+            flex: 1;
+            background: var(--bleu-petrole-pro);
+            border: 1px solid rgba(232, 168, 48, 0.2);
+            border-radius: 15px;
+            padding: 35px 25px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .parcours-etape:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .parcours-etape.diagnostic-highlight {
+            border: 2px solid var(--or-cohelisens);
+            background: rgba(232, 168, 48, 0.05);
+        }
+
+        .parcours-badge {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--or-cohelisens);
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .parcours-etape h3 {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            color: var(--blanc-pur);
+            border-bottom: 1px solid rgba(232, 168, 48, 0.2);
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .parcours-sub {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--or-cohelisens);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .parcours-etape ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .parcours-etape li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .parcours-etape li i {
+            color: var(--or-cohelisens);
+            margin-right: 12px;
+            margin-top: 4px;
+            font-size: 0.85rem;
+        }
+
+        .parcours-footer {
+            margin-top: 25px;
+            font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        /* Style de votre formulaire d'origine */
-        .contact-form { 
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05); 
-            padding: 30px; 
-            border-radius: 15px; 
-            border: 1px solid rgba(232, 168, 48, 0.2);
-        }
-        .contact-form input, .contact-form textarea { 
-            width: 100%; 
-            padding: 15px; 
-            margin-bottom: 15px; 
-            border-radius: 5px; 
-            border: 1px solid rgba(255, 255, 255, 0.2); 
-            background: rgba(255, 255, 255, 0.9);
-            color: #1a3a5c;
-            font-size: 0.95rem; 
-            box-sizing: border-box; 
-            font-family: 'Montserrat', sans-serif; 
-        }
-        .contact-form input::placeholder, .contact-form textarea::placeholder {
-            color: #777;
-        }
-        .btn-or { 
-            width: 100%;
-            background: #E8A830; 
-            color: #1a3a5c; 
-            padding: 15px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            border: none; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            text-transform: uppercase;
             letter-spacing: 1px;
-            transition: transform 0.2s; 
-        }
-        .btn-or:hover { 
-            transform: scale(1.02); 
-        }
-        .linkedin-link {
-            display: block;
+            color: var(--or-cohelisens);
             text-align: center;
-            margin-top: 25px;
-            color: #ffffff;
-            font-size: 0.9rem;
-            text-decoration: underline;
-            opacity: 0.8;
-            font-weight: 300;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
         }
-        .linkedin-link:hover {
+
+        .parcours-btn {
+            margin-top: 20px;
+            text-align: center;
+            background: var(--or-cohelisens);
+            color: var(--bleu-petrole-profond);
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .parcours-btn:hover {
+            background: #f0b84c;
+        }
+
+        /* --- FORMULAIRE --- */
+        .contact-form { max-width: 600px; margin: 20px auto 0; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; box-sizing: border-box; font-family: inherit; }
+
+        footer { padding: 40px 0; background: #0c1d30; font-size: 0.85rem; }
+
+        /* --- ANIMATION STYLE --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
             opacity: 1;
-            color: #E8A830;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .parcours-container { flex-direction: column; gap: 30px; }
+            .parcours-etape { padding: 30px 20px; }
+            .autorite-flex { flex-direction: column; gap: 25px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding-top: 150px; }
+            .logo { position: absolute; left: 50%; transform: translateX(-50%); width: 120px; }
+            .profile-flex { flex-direction: column; text-align: center; align-items: center; }
+            .profile-img { width: 180px; height: 180px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Votre Logo -->
+   <header class="hero">
         <img src="image_a0038e.png" alt="Logo COHÉLISENS" class="logo">
-        
-        <h1>COHÉLISENS</h1>
-        
-        <p class="highlight">Pause inspirante.</p>
-        
-        <p>Nous prenons un moment pour l'évolution notre activité.</p>
-        
-        <p>Merci pour votre confiance et votre patience. On se retrouve très vite !</p>
-        
-        <!-- Section Formulaire Formspree -->
-        <div class="form-section">
-            <h2 class="form-title">📩 Restons en contact</h2>
+        <div class="container">
+            <p style="color:var(--or-cohelisens); font-weight:700; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">CONSEILS & ACCOMPAGNEMENT EN RELATIONS HUMAINES</p>
+            <h1>Moins de tensions, <br><span style="color:var(--or-cohelisens)">plus de cohésion.</span></h1>
+
+            <p style="font-size: 1.2rem; max-width: 850px; margin: 0 auto 35px auto; font-weight: 300; opacity: 0.95; line-height: 1.7;">
+                J’aide les dirigeants, managers et équipes à restaurer une communication saine, à transformer les tensions en impact positif sur la cohésion d'équipe, à retrouver une coopération efficace.
+            </p>
+
+            <div>
+                <a href="https://calendly.com/sngufulu-cohelisens/diagnostic-flash-tensions-cohesion-d-equipe" target="_blank" class="btn-or">Réserver mon diagnostic offert</a>
+                <a href="#parcours" class="btn-outline">Découvrir le parcours</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-white">
+        <div class="container">
+            <h2>Qui suis-je ?</h2>
+            <div class="profile-flex">
+                <img src="image_a00482.png" alt="Soni NGUFULU" class="profile-img">
+                <div class="profile-text">
+                    <h3>Je suis Soni NGUFULU</h3>
+                    <p>Forte de 20 ans au cœur de la relation clientèle, j'ai évolué dans des environnements à forte pression où les non-dits s'accumulent, où les managers n'osent pas toujours parler et où les situations se grippent en silence. J'ai vécu de l'intérieur ce que coûte un dialogue totalement rompu.</p>
+                    <p>Au cours de ce parcours, j'ai développé une réelle capacité à dénouer les situations complexes. J'ai appris à apaiser les échanges, fluidifier les relations et faire le pont avec la hiérarchie. Ce que j'en ai retiré est devenu une évidence : <strong>quand on nomme les choses avec courage et authenticité, les situations se débloquent.</strong></p>
+                    <p>Aujourd'hui, je mets cette expérience de terrain au service des dirigeants de TPE et PME ainsi que de leurs équipes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white" style="border-top: 1px solid #f0f0f0;">
+        <div class="container">
+            <h2>Quand faire appel à COHÉLISENS ?</h2>
+            <p class="subtitle" style="color: var(--bleu-petrole-profond)">J’interviens lorsque les tensions relationnelles commencent à impacter la communication, l’efficacité ou la cohésion collective.</p>
+            
+            <div class="grid-situations">
+                <div class="card-situation">
+                    <h4><i class="fas fa-user-shield"></i> Tensions manager / équipe</h4>
+                    <p>Communication tendue, incompréhensions répétées, perte d’autorité ou climat émotionnel dégradé.</p>
+                </div>
+                <div class="card-situation">
+                    <h4><i class="fas fa-exchange-alt"></i> Conflits interservices</h4>
+                    <p>Oppositions persistantes, silos, reproches mutuels ou difficultés de coopération entre équipes.</p>
+                </div>
+                <div class="card-situation">
+                    <h4><i class="fas fa-comment-slash"></i> Communication dégradée</h4>
+                    <p>Non-dits, tensions passives, échanges agressifs ou perte progressive du dialogue.</p>
+                </div>
+                <div class="card-situation">
+                    <h4><i class="fas fa-users-slash"></i> Perte de coopération</h4>
+                    <p>Désengagement collectif, fatigue relationnelle, individualisation des comportements.</p>
+                </div>
+                <div class="card-situation">
+                    <h4><i class="fas fa-handshake-alt-slash"></i> Tensions partenaires / prestataires</h4>
+                    <p>Relations devenues sensibles, crispations récurrentes ou impact direct sur la qualité opérationnelle.</p>
+                </div>
+                <div class="card-situation">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Climat relationnel tendu</h4>
+                    <p>Stress collectif, multiplication des frictions au quotidien ou détérioration de l’ambiance de travail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <h2>Mon approche</h2>
+            <p class="subtitle">Une démarche ancrée dans le réel, pensée pour s'adapter à la vérité de votre quotidien.</p>
+            
+            <div class="approche-container">
+                <div class="approche-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <div>
+                        <h4>Je viens préparée sur votre réalité</h4>
+                        <p>Avant chaque intervention, un questionnaire terrain me permet de m’imprégner de vos équipes, de vos besoins et de vos blocages spécifiques. Pas de posture d'école, pas de programme générique.</p>
+                    </div>
+                </div>
+
+                <div class="approche-item">
+                    <i class="fas fa-eye"></i>
+                    <div>
+                        <h4>Je capte et je m'adapte</h4>
+                        <p>J'observe, je crée un climat de sécurité et de confiance, et je m'adapte à la personnalité de chacun ainsi qu'à la dynamique des discours ambiants.</p>
+                    </div>
+                </div>
+
+                <div class="approche-item">
+                    <i class="fas fa-user-friends"></i>
+                    <div>
+                        <h4>Je me mets à leur place</h4>
+                        <p>Zéro jugement. Vos collaborateurs échangeront avec quelqu'un qui comprend vraiment les réalités de leur quotidien.</p>
+                    </div>
+                </div>
+
+                <div class="approche-item">
+                    <i class="fas fa-seedling"></i>
+                    <div>
+                        <h4>Un impact dès le lendemain matin</h4>
+                        <p>Mon but est que chaque collaborateur se retrouve pleinement dans ce qui est dit, s'approprie la méthode naturellement, et puisse l'appliquer directement sur le terrain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 80px;">
+        <div class="container">
+            <h2>Mon Regard Terrain</h2>
+            <p class="subtitle">La majorité des tensions en entreprise ne viennent pas d’un manque de compétences, mais de dysfonctionnements relationnels non traités.</p>
+            
+            <div class="autorite-flex">
+                <div class="autorite-block">
+                    <h3 style="font-weight: 700;">Ce que j'observe le plus souvent</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Avant que le conflit n'explose ouvertement, les signaux faibles sont toujours présents. Les tensions s'installent principalement lorsque :</p>
+                    <ul class="liste-check">
+                        <li><i class="fas fa-arrow-right"></i> Les non-dits s'accumulent au fil des semaines.</li>
+                        <li><i class="fas fa-arrow-right"></i> Les rôles et les périmètres deviennent flous.</li>
+                        <li><i class="fas fa-arrow-right"></i> La pression externe augmente sans sas de décompression.</li>
+                        <li><i class="fas fa-arrow-right"></i> Les équipes ne se sentent plus véritablement écoutées.</li>
+                    </ul>
+                </div>
+
+                <div class="autorite-block" style="border-left: 4px solid var(--or-cohelisens);">
+                    <h3 style="font-weight: 700;">Quand les tensions coûtent cher</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Laisser une situation se détériorer dépasse le cadre humain. C’est un enjeu business majeur qui pèse sur la structure :</p>
+                    <ul class="liste-check">
+                        <li><i class="fas fa-check"></i> <strong>Perte de temps</strong> (les managers passent des heures à arbitrer).</li>
+                        <li><i class="fas fa-check"></i> <strong>Désengagement</strong> et baisse nette de productivité collective.</li>
+                        <li><i class="fas fa-check"></i> <strong>Turn-over</strong> (départ de profils clés, coûts de recrutement).</li>
+                        <li><i class="fas fa-check"></i> <strong>Impact Image de marque</strong> (fuite vers les avis clients ou Google).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container">
+            <h2>La Méthode A-C-R-C</h2>
+            <p class="subtitle" style="color: var(--bleu-petrole-profond)">Pensée en 4 étapes simples, centrée sur le sens pour retrouver la cohésion. Chaque collaborateur peut se l'approprier.</p>
+            <div class="grid-cards">
+                <div class="card"><span class="letter">A</span><h3 style="font-weight: 700;">Accueillir</h3><p>Désamorcer la charge émotionnelle et sécuriser l’échange.</p></div>
+                <div class="card"><span class="letter">C</span><h3 style="font-weight: 700;">Clarifier</h3><p>Identifier les faits et les besoins réels.</p></div>
+                <div class="card"><span class="letter">R</span><h3 style="font-weight: 700;">Recadrer</h3><p>Revenir aux objectifs communs et aux règles de base.</p></div>
+                <div class="card"><span class="letter">C</span><h3 style="font-weight: 700;">Conclure</h3><p>Valider un plan d’action immédiat et concret.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white" style="border-top: 1px solid #f0f0f0;">
+        <div class="container">
+            <h2 style="color: var(--bleu-petrole-profond)">Résultats attendus</h2>
+            <p class="subtitle" style="color: var(--bleu-petrole-profond)">Ce que mon intervention change concrètement pour vous :</p>
+            
+            <div class="grid-cards">
+                <div class="card" style="background:#f9f9f9">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3 style="font-weight: 700;">Sérénité retrouvée</h3>
+                    <p>Réduction immédiate du stress lié aux interactions quotidiennes.</p>
+                </div>
+                <div class="card" style="background:#f9f9f9">
+                    <i class="fas fa-hourglass-half"></i>
+                    <h3 style="font-weight: 700;">Efficacité & Temps</h3>
+                    <p>Gain de productivité grâce à des échanges plus fluides, directs et cadrés.</p>
+                </div>
+                <div class="card" style="background:#f9f9f9">
+                    <i class="fas fa-handshake"></i>
+                    <h3 style="font-weight: 700;">Compétences Soft Skills</h3>
+                    <p>Montée en compétences durable sur le savoir-être collectif.</p>
+                </div>
+                <div class="card" style="background:#f9f9f9">
+                    <i class="fas fa-star"></i>
+                    <h3 style="font-weight: 700;">Image de marque</h3>
+                    <p>Des collaborateurs sereins qui deviennent de meilleurs ambassadeurs de votre structure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container reveal">
+            <h2 style="color: var(--bleu-petrole-profond)">Ils m'ont fait confiance</h2>
+            <div style="max-width: 850px; margin: 40px auto; background: #f9f9f9; color: var(--bleu-petrole-profond); padding: 40px; border-radius: 20px; border-left: 8px solid var(--or-cohelisens); text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8;">
+                    "Les tensions entre mes coordinateurs et nos prestataires peuvent parfois être houleuses et impacter les événements organisés. Nous avons fait confiance à Soni pour y remédier. Ce qui m'a frappée, c'est son dynamisme et sa capacité à s'adapter à la personnalité de chacun, avec des mots simples et une méthode facile à appliquer au quotidien, comme promis. Le message est très bien passé. L'amélioration s'est ressentie lors d'une récente prestation : c'est très encourageant."
+                </p>
+                <p style="margin-top: 20px; font-weight: 700; color: var(--bleu-petrole-profond); margin-bottom: 0;">K. Tsigani</p>
+                <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">Responsable agence événementielle | Avril 2026</p>
+                <p style="margin-top: 15px; font-size: 0.8rem; font-weight: 700; color: var(--or-cohelisens); text-transform: uppercase; letter-spacing: 1px;">
+                    <i class="fas fa-check-circle"></i> Intervention sur-mesure
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="parcours" class="bg-dark">
+        <div class="container">
+            <h2>Mon Parcours d'Accompagnement</h2>
+            <p class="subtitle">Une promesse unique, une démarche structurée en 3 niveaux pour retrouver l'alignement.</p>
+            
+            <div class="parcours-container">
+                
+                <div class="parcours-etape diagnostic-highlight">
+                    <span class="parcours-badge">Niveau 1</span>
+                    <h3>Le Diagnostic</h3>
+                    <div class="parcours-sub">"On identifie le problème"</div>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Diagnostic Cohésion™</li>
+                        <li><i class="fas fa-hourglass-half"></i> <strong>Durée :</strong> 30 minutes confidentielles</li>
+                        <li><i class="fas fa-comments"></i> Échange direct avec le dirigeant ou manager pour analyser les angles morts.</li>
+                        <li><i class="fas fa-search"></i> Identification rapide des tensions invisibles qui fragilisent l'équipe.</li>
+                        <li><i class="fas fa-lightbulb"></i> Restitution immédiate des premiers axes d'action concrets.</li>
+                    </ul>
+                    <a href="https://calendly.com/sngufulu-cohelisens/diagnostic-flash-tensions-cohesion-d-equipe" target="_blank" class="parcours-btn">Réserver mon diagnostic</a>
+                    <div class="parcours-footer">
+                        <i class="fas fa-gift"></i> Offert · Confidentiel
+                    </div>
+                </div>
+
+                <div class="parcours-etape">
+                    <span class="parcours-badge">Niveau 2</span>
+                    <h3>L'Intervention</h3>
+                    <div class="parcours-sub">"On le résout ensemble"</div>
+                    <ul>
+                        <li><i class="fas fa-bolt"></i> Journée complète ou Demi-journée.</li>
+                        <li><i class="fas fa-users"></i> Action ciblée sur le terrain avec vos équipes (jusqu'à 10 personnes).</li>
+                        <li><i class="fas fa-graduation-cap"></i> Transmission et mise en pratique de la méthode A-C-R-C.</li>
+                        <li><i class="fas fa-map-signs"></i> Co-construction d'un plan d'action collectif immédiat.</li>
+                    </ul>
+                    <div class="parcours-footer">
+                        Sur-mesure · Terrain ou visio
+                    </div>
+                </div>
+
+                <div class="parcours-etape">
+                    <span class="parcours-badge">Niveau 3</span>
+                    <h3>L'Ancrage</h3>
+                    <div class="parcours-sub">"On vérifie que ça tient"</div>
+                    <ul>
+                        <li><i class="fas fa-calendar-check"></i> <strong>Échéance :</strong> Session à J+30.</li>
+                        <li><i class="fas fa-shield-alt"></i> Session de suivi et de renfort pour pérenniser les acquis.</li>
+                        <li><i class="fas fa-fire-extinguisher"></i> Traitement des cas réels rencontrés depuis l'intervention.</li>
+                        <li><i class="fas fa-chart-line"></i> Questionnaire d'impact et ajustement de la posture.</li>
+                    </ul>
+                    <div class="parcours-footer">
+                        Suivi à J+30
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="font-size: 0.9rem; border: 1px dashed var(--or-cohelisens); padding: 15px; margin-top: 30px;">
+                Chaque entreprise est unique. Le niveau et l'intensité de l'intervention sont ajustés suite à notre premier échange diagnostic.
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container">
+            <h2>Mesure d'impact à J+30</h2>
+            <div class="grid-cards">
+                <div class="card" style="background:#f9f9f9"><i class="fas fa-clipboard-list"></i><h3 style="font-weight: 700;">Feedback</h3><p>Mesure des changements via un questionnaire terrain.</p></div>
+                <div class="card" style="background:#f9f9f9"><i class="fas fa-phone-alt"></i><h3 style="font-weight: 700;">Appel Bilan</h3><p>Analyse conjointe des résultats et ajustements.</p></div>
+                <div class="card" style="background:#f9f9f9"><i class="fas fa-file-alt"></i><h3 style="font-weight: 700;">Compte-rendu</h3><p>Synthèse écrite et préconisations futures.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-dark" style="border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+             <h2>Demander mon Diagnostic Cohésion™</h2>
+            
+            <p style="color: var(--blanc-pur); font-weight: 400; font-size: 1rem; margin-top: 0; margin-bottom: 20px;">Faisons le point ensemble.</p>
+            
+            <div style="background: rgba(232, 168, 48, 0.1); border: 1px solid var(--or-cohelisens); padding: 25px; border-radius: 10px; max-width: 650px; margin: 0 auto 30px auto;">
+                <p style="color: var(--or-cohelisens); font-weight: 700; font-size: 1.2rem; margin-bottom: 10px; margin-top:0;"></p>
+                <a href="https://calendly.com/sngufulu-cohelisens/diagnostic-flash-tensions-cohesion-d-equipe" target="_blank" style="color: var(--blanc-pur); text-decoration: underline; font-weight: 700; font-size: 1.05rem;">
+                    👉 Cliquez ici pour réserver votre créneau directement sur mon agenda professionnel
+                </a>
+            </div>
+
+            <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 15px;">Ou décrivez votre situation ci-dessous pour être recontacté(e) :</p>
             
             <form action="https://formspree.io/f/xaqllyyb" method="POST" class="contact-form">
                 <input type="hidden" name="_next" value="https://mikatebysoni-jpg.github.io/COHELISENS-SITE/merci.html">
                 <input type="text" name="nom_entreprise" placeholder="Votre nom et entreprise" required>
                 <input type="email" name="email" placeholder="Votre email professionnel" required>
                 <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
-                <textarea name="message" placeholder="Votre message..." rows="4" required></textarea>
-                <button type="submit" class="btn-or">Envoyer ma demande</button>
+                <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
+                <button type="submit" class="btn-or" style="width: 100%; margin: 10px 0;">Envoyer ma demande</button>
             </form>
-            
-            <!-- Votre lien LinkedIn secondaire en discret dessous -->
-            <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" class="linkedin-link">
-                Nous suivre sur LinkedIn 🤝
-            </a>
+
+            <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <a href="tel:+33745915946" style="display: inline-block; padding: 12px 25px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> 07 45 91 59 46
+                </a>
+                <a href="https://www.linkedin.com/in/soni-ngufulu-aa91b5400" target="_blank" style="display: inline-block; padding: 12px 25px; border: 1px solid var(--or-cohelisens); color: var(--or-cohelisens); text-decoration: none; border-radius: 5px; font-weight: 600;">
+                    <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn 🤝
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>COHÉLISENS</strong> – Soni NGUFULU</p>
+            <p><i class="fas fa-phone-alt"></i> 07 45 91 59 46 | <i class="fas fa-envelope"></i> sngufulu@cohelisens.com</p>
+            <div style="margin: 15px 0;">
+                <a href="cgv-cohelisens.pdf" style="color: #ffffff; text-decoration: underline; margin: 0 10px; opacity: 0.8;">CGV</a>
+                <a href="Cohelisens_Confidentialite_v3.pdf" style="color: #ffffff; text-decoration: underline; margin: 0 10px; opacity: 0.8;">Confidentialité</a>
+                <a href="Cohelisens_CharteEthique_v3.pdf" style="color: #ffffff; text-decoration: underline; margin: 0 10px; opacity: 0.8;">Charte éthique</a>
+            </div>
+            <p style="opacity:0.6; margin-top: 15px; font-size: 0.75rem;">
+                Reims | SIRET : 10295516800012 | TVA non applicable (art. 293 B du CGI)
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+          var reveals = document.querySelectorAll(".reveal");
+          for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+              reveals[i].classList.add("active");
+            }
+          }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
 
 </body>
 </html>
-    
